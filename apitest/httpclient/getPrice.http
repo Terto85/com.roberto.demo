@@ -1,0 +1,165 @@
+### GET Test 0: petición a las 00:00 del día 13 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_0 = 1
+@productId_0 = 35455
+@dateTime_0 = 20200613000000
+GET http://localhost:8080/price/{{brandId_0}}/{{productId_0}}/{{dateTime_0}}
+
+> {%
+    const expectedStatus = 200;
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+%}
+
+### GET Test 1: petición a las 10:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+@brandId_t1 = 1
+@productId_t1 = 35455
+@dateTime_t1 = 20200614100000
+GET http://localhost:8080/price/{{brandId_t1}}/{{productId_t1}}/{{dateTime_t1}}
+
+> {%
+    const expectedValue = "1";
+    const expectedStatus = 200;
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+    client.test("PriceList = " + expectedValue, function () {
+        const priceListValue = String(jsonPath(response.body, "priceList"));
+        client.assert( priceListValue === expectedValue, "Expected priceList " + expectedValue + " but was " + priceListValue);
+    });
+%}
+
+### GET Test 2: petición a las 16:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_t2 = 1
+@productId_t2 = 35455
+@dateTime_t2 = 20200614160000
+GET http://localhost:8080/price/{{brandId_t2}}/{{productId_t2}}/{{dateTime_t2}}
+
+> {%
+    const expectedValue = "2";
+    const expectedStatus = 200;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+    client.test("PriceList = " + expectedValue, function () {
+        const priceListValue = String(jsonPath(response.body, "priceList"));
+        client.assert( priceListValue === expectedValue, "Expected priceList " + expectedValue + " but was " + priceListValue);
+    });
+%}
+
+### GET Test 3: petición a las 21:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_t3 = 1
+@productId_t3 = 35455
+@dateTime_t3 = 20200614210000
+GET http://localhost:8080/price/{{brandId_t3}}/{{productId_t3}}/{{dateTime_t3}}
+
+> {%
+    const expectedValue = "1";
+    const expectedStatus = 200;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+    client.test("PriceList = " + expectedValue, function () {
+        const priceListValue = String(jsonPath(response.body, "priceList"));
+        client.assert( priceListValue === expectedValue, "Expected priceList " + expectedValue + " but was " + priceListValue);
+    });
+%}
+
+### GET Test 4: petición a las 10:00 del día 15 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_t4 = 1
+@productId_t4 = 35455
+@dateTime_t4 = 20200615100000
+GET http://localhost:8080/price/{{brandId_t4}}/{{productId_t4}}/{{dateTime_t4}}
+
+> {%
+    const expectedValue = "3";
+    const expectedStatus = 200;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+    client.test("PriceList = " + expectedValue, function () {
+        const priceListValue = String(jsonPath(response.body, "priceList"));
+        client.assert( priceListValue === expectedValue, "Expected priceList " + expectedValue + " but was " + priceListValue);
+    });
+%}
+
+
+### GET Test 5: petición a las 21:00 del día 16 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_t5 = 1
+@productId_t5 = 35455
+@dateTime_t5 = 20200616210000
+GET http://localhost:8080/price/{{brandId_t5}}/{{productId_t5}}/{{dateTime_t5}}
+
+> {%
+    const expectedValue = "4";
+    const expectedStatus = 200;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+    client.test("PriceList = " + expectedValue, function () {
+        const priceListValue = String(jsonPath(response.body, "priceList"));
+        client.assert( priceListValue === expectedValue, "Expected priceList " + expectedValue + " but was " + priceListValue);
+    });
+%}
+
+
+### GET Test 6: petición a las 00:00 del día 01 de 2021 del producto 35455   para la brand 1 (ZARA)
+###
+@brandId_t6 = 1
+@productId_t6 = 35455
+@dateTime_t6 = 20210101000000
+GET http://localhost:8080/price/{{brandId_t6}}/{{productId_t6}}/{{dateTime_t6}}
+
+> {%
+    const expectedStatus = 200;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+
+%}
+
+
+### GET Test 7: bad request
+###
+@brandId_t7 = 1
+@productId_t7 = 35455
+@dateTime_t7 = 20210101000000
+GET http://localhost:8080/priceBADREQUEST/{{brandId_t7}}/{{productId_t7}}/{{dateTime_t7}}
+
+> {%
+    const expectedStatus = 404;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+%}
+
+### GET Test 8: bad date
+###
+@brandId_t8 = 1
+@productId_t8 = 35455
+@dateTime_t8 = bad20210101000
+GET http://localhost:8080/price/{{brandId_t8}}/{{productId_t8}}/{{dateTime_t8}}
+
+> {%
+    const expectedStatus = 400;
+
+    client.test("Status = " + expectedStatus, function () {
+        client.assert(response.status === expectedStatus, "ERROR - Expected " + expectedStatus + " but was " + response.status);
+    });
+%}

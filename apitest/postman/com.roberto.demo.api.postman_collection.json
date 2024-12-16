@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "6eb2246d-bbe0-4d32-9efd-b912eff8723d",
+		"name": "com.roberto.demo.api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "876279"
+	},
+	"item": [
+		{
+			"name": "Test 0 - 200_EMPTY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Body must be empty\", function () {\r",
+							"    pm.response.to.have.body(\"\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200613000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200613000000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 1 - 200_PL_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"    pm.response.to.have.status(expectedStatus);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('priceList\":1');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200614100000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200614100000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 2 - 200_PL_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"    pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('priceList\":2');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200614160000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200614160000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 3 - 200_PL_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"        pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('priceList\":1');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200614210000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200614210000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 4 - 200_PL_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"        pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('priceList\":3');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200615100000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200615100000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 5 - 200_PL_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"        pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('priceList\":4');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20200616210000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20200616210000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 7 - 400 - Wrong date format",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 400;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"        pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('Wrong date format');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/bad20210101000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"bad20210101000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		},
+		{
+			"name": "Test 6 - 200_EMPTY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus = 200;\r",
+							"    pm.test(\"Status = \" + expectedStatus, function () {\r",
+							"        pm.response.to.have.status(expectedStatus);\r",
+							"    });\r",
+							"pm.test(\"Body must be empty\", function () {\r",
+							"    pm.response.to.have.body(\"\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/price/1/35455/20210101000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"1",
+						"35455",
+						"20210101000000"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET --location \"http://localhost:8080/price/1/35455/20200613000000\""
+			},
+			"response": []
+		}
+	]
+}

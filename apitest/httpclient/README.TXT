@@ -1,0 +1,1 @@
+This folder contains REST request for the application endpoints for the IntelliJ-IDEA Ultimate http client
